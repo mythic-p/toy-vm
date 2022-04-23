@@ -150,13 +150,13 @@ Please note that the Xue language is developed in 2022, so there're  some modern
 
 - The `EXIT` mnemonic will interrupt the execution of the program, you can use this mnemonic to finish the program in advance.
 
-- The `import` pseudo instruction, this one can import one or more existing Xue source files into the  program, if you import same file multiple times, the compiler will view these operations as that the file is imported only once.
+- The `import` pseudo instruction, this one can import one or more existing Xue source files into the  program, if you import same file multiple times, the compiler will consider these duplicated imports as one import.
 
 - The `export` pseudo instruction. The Xue language can make some given variables put at global data area, which means that they can be used in everywhere once they have been initialized with explicit value.
 
 ## Comment
 
-The Xue language uses ';' as the symbol of line comment, and there's no block comment in this language. You can use line comment like this.top 20
+The Xue language uses ';' as the symbol of line comment, and there's no block comment in this language. You can use line comment like this.
 
 ```
   PUSH @"Hello World!"    ; Push a string onto the stack

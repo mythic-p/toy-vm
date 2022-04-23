@@ -8,7 +8,7 @@ The whole design documentation will be placed in docs/, including the syntax of 
 
 ## Origin
 
-The Xue language is named after the last name of my cute girlfriend, which means that she is my new motivation to programming.
+The Xue language is named after the last name of my cute girlfriend, which means that she is my new motivation to keep programming and learning.
 
 ## Goal
 

@@ -45,10 +45,10 @@ The Xue language can declare local variables and refer the declared one, you can
                         ; the stack.
 ```
 
-If you want to declare a global variable, you must declare it in the global variable section, where it starts with a pseudo instruction `global`. And the way to tell the compiler that the global variable declaration is end is that set a named label. The example of how to declare global variable is as follows.
+If you want to declare a global variable, you must declare it in the global variable section, where it starts with a pseudo instruction `global`. And the way to tell the compiler that the global variable declaration is end is that set a named label. Should notice that all pseudo instructions start with a `.`, then the instruction name. The example of how to declare global variable is as follows.
 
 ```
-global:
+.global:
   VAR a 0              ; Declare a global variable named after a with
                        ; initialized value 0.
   VAR b 0f             ; Declare a global floating point variable b with
@@ -177,7 +177,7 @@ Here are some examples to show how to use Xue to write some classic computer pro
 ### Fibonacci in Xue
 
 ```
-global:
+.global:
   VAR f1 0
   VAR f2 1
   VAR count 2

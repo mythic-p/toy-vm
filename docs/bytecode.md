@@ -22,9 +22,9 @@ typedef Byte unsigned char;
 struct Xue_Bytecode_File {
   int magic_signature;   // We use 4 ASCII characters to represent its
                          // file signature, the content of it is XUE!
-  int file_version;      // Here we use low 2 bits for patch version
-                         // Highest 1 bit for major version and second
-                         // high 1 bit for minor version.
+  int file_version;      // Here we use low 16 bits for patch version
+                         // Highest 8 bits for major version and second
+                         // high 8 bits for minor version.
   unsigned int constant_pool_size;
   Byte constant_pool_data[constant_pool_size];
 

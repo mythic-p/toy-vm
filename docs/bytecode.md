@@ -107,4 +107,4 @@ The address code of Xue bytecode can be a 26-bit signed or unsigned number. Whet
 
 - `CCALL` opcode, uses the address code as the foreign function index, which means that the whole Xue program can use 2^26 foreign functions.
 
-- `CPY` and `EXIT` opcode does not use the address code part, so we can consider the address code part as reserved for future :) 
+- `CPY` and `EXIT` opcode does not use the address code part, so we can consider the address code part as reserved for future :)

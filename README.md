@@ -1,5 +1,7 @@
 # My Toy VM
 
+English|[简体中文](./README.CN.md)
+
 ## Introduction
 
 This is a programming project started at April 22th 2022. The toy programming language in this project is called Xue, which only consists  of simple control flow structure and arithmetical operation. The syntax of Xue is pretty like Assembly Language.

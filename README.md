@@ -1,6 +1,6 @@
 # My Toy VM
 
-English|[简体中文](./README.CN.md)
+**English**|[简体中文](./README.CN.md)
 
 ## Introduction
 

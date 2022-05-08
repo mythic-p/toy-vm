@@ -1,5 +1,7 @@
 # Syntax of Xue
 
+**English** | [简体中文](./syntax.CN.md)
+
 Note: The Xue language follows the syntax of GNU AT&T.
 
 ## Basic data types

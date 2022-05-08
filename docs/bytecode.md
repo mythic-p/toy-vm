@@ -1,5 +1,7 @@
 # Bytecode of Xue
 
+**English** | [简体中文](./bytecode.CN.md)
+
 The Xue program will be compiled into a specific binary format of bytecode before being executed. This documentation will describe the binary format and design objective of it in detail.
 
 ## Objective
@@ -49,55 +51,51 @@ The bytecode file starts with four ASCII characters `'XUE!'`, then follows four 
 
 Each instruction in Xue bytecode is a 32-bit unsigned integer, and we use higher 6 bits to represent its operation code and low 26bits to represent its address code.
 
-Currently, there're 20 operation codes, the value of them are:
+Currently, there're 19 operation codes, the value of them are:
 
-- NOP: 0x000000
+- NOP: 0x00
 
-- ADD: 0x000001
+- ADD: 0x01
 
-- SUB: 0x000010
+- SUB: 0x02
 
-- MUL: 0x000011
+- MUL: 0x03
 
-- DIV: 0x000100
+- DIV: 0x04
 
-- MOD: 0x000101
+- MOD: 0x05
 
-- VAR: 0x000110
+- PUSH: 0x06
 
-- PUSH: 0x000111
+- POP: 0x07
 
-- POP: 0x001000
+- JMP: 0x08
 
-- JMP: 0x001001
+- CMP: 0x09
 
-- CMP: 0x001010
+- JGE: 0x0A
 
-- JGE: 0x001011
+- JLE: 0x0B
 
-- JLE: 0x001100
+- JGT: 0x0C
 
-- JGT: 0x001101
+- JLT: 0x0D
 
-- JLT: 0x001110
+- JEQ: 0x0E
 
-- JEQ: 0x001111
+- JNE: 0x0F
 
-- JNE: 0x010000
+- CCALL: 0x10
 
-- CCALL: 0x010001
+- CPY: 0x11
 
-- CPY: 0x010010
-
-- EXIT: 0x010011
+- EXIT: 0x12
 
 The address code of Xue bytecode can be a 26-bit signed or unsigned number. Whether it is signed is based on the type of operation code.
 
 - The `NOP` opcode, the remaining 26-bits is reserved.
 
 - The `ADD`, `SUB`, `MUL`, `DIV` and `MOD` opcode, the address code part can be the offset of the top of the stack, (i.e. the address of local variable) a 26-bit signed integer, a pointer pointing to a constant floating-point number, a pointer pointing to the string constant pool or a pointer pointing to the global variable. (i.e. the address of a global variable)
-
-- `VAR` opcode, the name of both local and global variable is just a compile-time variable, so the whole address code is the same as the previous five mnemonics.
 
 - `PUSH` and `POP` opcode, the address code is also the same as the previous one. It either stores a 26-bit signed integer or the address of any other basic data type.
 

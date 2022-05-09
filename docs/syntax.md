@@ -8,7 +8,7 @@ Note: The Xue language follows the syntax of GNU AT&T.
 
 Every physic or virtual machine must have its atomic data unit, while most of them are byte, 1 byte consists of 8 bits. In the Xue virtual machine, the basic type is also the byte. Other basic types like string, floating number is also made up of byte. The only difference is that these basic types have its own structure while byte have no data structure. Here are some examples on how to use these basic types.
 
-```
+```nasm
   VAR myint, 12          ; We declared a variable whose name is myint
                          ; and push the value 12 to it and push the
                          ; variable onto the top of the stack.
@@ -40,7 +40,7 @@ If you want to use a variable in the mnemonic, there're two ways to do this.
 
 The Xue language can declare local variables and refer the declared one, you can use the following instruction.
 
-```
+```nasm
   VAR $name $value      ; Declare a variable whose name is $name, and 
                         ; the value of it is $value
   PUSH $name            ; Push the value of the given variable $name onto
@@ -49,7 +49,7 @@ The Xue language can declare local variables and refer the declared one, you can
 
 If you want to declare a global variable, you must declare it in the global variable section, where it starts with a pseudo instruction `global`. And the way to tell the compiler that the global variable declaration is end is that set a named label. Should notice that all pseudo instructions start with a `.`, then the instruction name. The example of how to declare global variable is as follows.
 
-```
+```nasm
 .global:
   VAR a 0              ; Declare a global variable named after a with
                        ; initialized value 0.
@@ -62,14 +62,14 @@ label main:
 
 Because this virtual machine is a stack machine, the programmer can only push values onto the stack and pop value from the stack. You can use the following instruction to do such operations.
 
-```
+```nasm
   PUSH $value           ; Push the value $value onto the stack
   POP $variable         ; Pop the top of the stack and send to the given variable
 ```
 
 This language also supports basic arithmetic operation e.g. addition, subtraction, multiplication, division and modulo. You use the instruction below.
 
-```
+```nasm
   ADD $variable        ; Pops two integer or float-like values from the stack
                        ; and push the result to the given variable
   
@@ -95,7 +95,7 @@ This language also supports basic arithmetic operation e.g. addition, subtractio
 
 Control flow structure is also the basic part of Xue language. You can use label to mark the start of a code block and use jump instruction to implement high-level programming language clause like `if`, `if-else` and `else`.
 
-```
+```nasm
   label lbl:              ; This is a label called lbl, you can use
                           ; branch instruction to jump to the start of
                           ; this label.
@@ -134,7 +134,7 @@ Control flow structure is also the basic part of Xue language. You can use label
 
 Except the mnemonics about control flow structure and arithmetic operations, the Xue language also has the ability to call the C-ABI compatible functions from static library by using stdcall or cdecl calling convention. Here are some mnemonics that you may use in your Xue program.
 
-```
+```nasm
   CCALL $function        ; Call a C-ABI compatible function, the compiler
                          ; will collect the information about callee
                          ; during compile-time, so do not worry about it,
@@ -160,7 +160,7 @@ Please note that the Xue language is developed in 2022, so there're  some modern
 
 The Xue language uses ';' as the symbol of line comment, and there's no block comment in this language. You can use line comment like this.
 
-```
+```nasm
   PUSH @"Hello World!"    ; Push a string onto the stack
   CCALL $printf           ; Call the printf function in libc.
 ```
@@ -171,14 +171,14 @@ Here are some examples to show how to use Xue to write some classic computer pro
 
 ### Hello World in Xue
 
-```
+```nasm
   PUSH @"Hello World in Xue!"
   CCALL $printf
 ```
 
 ### Fibonacci in Xue
 
-```
+```nasm
 .global:
   VAR f1 0
   VAR f2 1

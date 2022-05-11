@@ -1,5 +1,7 @@
 # The design of Xue virtual machine
 
+**English** | [简体中文](./virtual_machine.CN.md)
+
 This documentation is used for describing the whole procedure of how to design the Xue stack virtual machine.
 
 ## Structure
@@ -26,7 +28,7 @@ struct Xue_VM {
 
   Instruction* instructions;
   u32 instruction_count;
-  
+
   Byte* constant_data;
   u32 constant_data_size;
 

@@ -144,14 +144,7 @@ Xue语言还提供了2个指令，`CPY`和`EXIT`。其中`CPY`指令将会弹出
   @"std/std.xue"
 ```
 
-因为在Xue语言中全局变量的作用域为整个源码文件而非整个字节码文件。所以每个源文件中的全局变量索引都会被添加一个全局唯一前缀，如果要让变量可以被其他源文件引用，必须在`export`伪指令中声明，代码示例如下。
 
-```nasm
-.global:
-  VAR myGlobal 30     ; 声明整型全局变量myGlobal
-.export:
-  myGlobal            ; 导出全局变量myGlobal
-```
 
 ### 注释
 
@@ -210,5 +203,3 @@ label fibonacci_body:
   ADD $count
   JMP fibonacci_check
 ```
-
-

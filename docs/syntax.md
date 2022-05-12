@@ -154,7 +154,7 @@ Please note that the Xue language is developed in 2022, so there're  some modern
 
 - The `import` pseudo instruction, this one can import one or more existing Xue source files into the  program, if you import same file multiple times, the compiler will consider these duplicated imports as one import.
 
-- The `export` pseudo instruction. The Xue language can make some given variables put at global data area, which means that they can be used in everywhere once they have been initialized with explicit value.
+- 
 
 ## Comment
 
